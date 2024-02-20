@@ -1,0 +1,76 @@
+{% extends "base.html" %} {% block title %} Sign Up {% endblock %} {% load static %}
+
+<style>
+  body {
+    background-color: #2e4057;
+    margin: 0;
+  }
+
+  .patterns {
+    height: 100vh;
+  }
+
+  svg text {
+    font-family: "Lora", serif;
+    letter-spacing: 10px;
+    stroke: #ffa5d8;
+    font-size: 150px;
+    font-weight: 700;
+    stroke-width: 3;
+    animation: textAnimate 5s infinite alternate;
+    fill: hsla(189, 68%, 75%, 0%); /* Set initial fill color */
+  }
+
+  @keyframes textAnimate {
+    0% {
+      stroke-dasharray: 0 50%;
+      stroke-dashoffset: 20%;
+      fill: hsl(189, 68%, 75%);
+    }
+
+    100% {
+      stroke-dasharray: 50% 0;
+      stroke-dashoffset: -20%;
+      fill: hsla(189, 68%, 75%, 0%);
+    }
+  }
+
+  /* Additional styles can be added here */
+</style>
+{% block content %}
+
+<div class="welcome">
+  <h1
+    style="
+      font-size: 70px;
+      font-family: 'Courier New', Courier, monospace;
+      color: violet;
+      font-weight: bolder;
+    "
+  >
+    Hello,
+  </h1>
+  <br />
+  <h3 style="font-size: 30px; font-family: 'Courier New', Courier, monospace">
+    {{ firstname }} &nbsp; {{ lastname }}
+  </h3>
+  <br />
+  <h3 style="font-size: 30px; font-family: 'Courier New', Courier, monospace">
+    Welcome Back To GPA
+  </h3>
+
+  <div class="logoutbtn" style="
+    display: flex;
+    justify-content: center;
+    width: 25px;
+    border-radius: 5px;
+    background-color: #00dfc4;
+    color:white;
+    text-align: center;
+    ">
+    <a href="/logouts" style="text-decoration: none; color:aliceblue; font-weight: bold; text-align: center;">Log Out </a>
+  </div>
+</div>
+<script src="{% static 'js/index.js' %}"></script>
+
+{% endblock %}
